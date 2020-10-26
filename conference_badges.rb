@@ -1,13 +1,6 @@
-# write a method 'assign_rooms' 
-# that takes the list of speakers and assigns each speaker to a room. 
-# Make sure that each room only has one speaker. 
-# You have rooms 1-7. return a list of room assignments in the form of: 
-# "Hello, _____! You'll be assigned to room _____!" *
 
 # Create a method called printer that will output first the results of the 'batch_badge_creator' method
 # and then of 'the assign_rooms' method to the screen
-
-
 name = "Arel"
 attendees = "Edsger", "Ada", "Char[les", "Alan", "Grace", "Linus", "Matz"
 
@@ -29,10 +22,14 @@ def assign_rooms(attendees)
 end
 
 def printer(attendees)
-    puts batch_badge_creator(attendees)[1]
-    puts assign_rooms(attendees)[1]
-    printer(attendees).chomp
+   batch_badge_creator(attendees).each do |attendee|
+     puts attendee
+   end
+   assign_rooms(attendees).each do |room|
+     puts room
+   end 
+
 end 
 
-
+#   badges_and_room_assignments.each_line do |line|     <--- saw in spec (will it work?)
 
